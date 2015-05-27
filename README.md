@@ -23,7 +23,7 @@ color('red').toHexString(); // #ff0000
 ```
 ## Methods
 
-### `fromRgb(r, g, b)`
+### `fromRgb([r, g, b])`
 
 | parameter | type   | description   |
 | --------- | ------ | ------------- |
@@ -33,7 +33,7 @@ color('red').toHexString(); // #ff0000
 
 **Returns** `instance`
 
-### `fromRgba(r, g, b, a)`
+### `fromRgba([r, g, b, a])`
 
 | parameter | type   | description   |
 | --------- | ------ | ------------- |
@@ -44,7 +44,7 @@ color('red').toHexString(); // #ff0000
 
 **Returns** `instance`
 
-### `fromHsl(h, s, l)`
+### `fromHsl([h, s, l])`
 
 | parameter | type   | description        |
 | --------- | ------ | ------------------ |
@@ -54,7 +54,7 @@ color('red').toHexString(); // #ff0000
 
 **Returns** `instance`
 
-### `fromHsla(h, s, l, a)`
+### `fromHsla([h, s, l, a])`
 
 | parameter | type   | description        |
 | --------- | ------ | ------------------ |
@@ -75,7 +75,7 @@ color('red').toHexString(); // #ff0000
 
 ### `toHexString()`
 
-**Returns** 6-digit or an 8-digit `hex`, depending on the alpha.
+**Returns** 6-digit or 8-digit `hex`, depending on the alpha.
 
 ### `toRgbaArray()`
 
