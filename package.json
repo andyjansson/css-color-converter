@@ -1,0 +1,31 @@
+{
+  "name": "css-color-converter",
+  "version": "1.0.0",
+  "description": "Converts CSS colors from one representation to another",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyjansson/css-color-converter.git"
+  },
+  "keywords": [
+    "css",
+    "color",
+    "conversions",
+    "converter"
+  ],
+  "author": "Andy Jansson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyjansson/css-color-converter/issues"
+  },
+  "homepage": "https://github.com/andyjansson/css-color-converter",
+  "dependencies": {
+    "color-convert": "^0.5.2",
+    "color-name": "^1.0.0"
+  },
+  "devDependencies": {
+  }
+}
