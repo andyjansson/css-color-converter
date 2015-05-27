@@ -5,6 +5,7 @@ assert.deepEqual(color("blue").toRgbaArray(), [0, 0, 255, 1]);
 assert.deepEqual(color("blue").toHexString(), '#0000ff');
 assert.deepEqual(color("rgb(255, 255, 255)").toRgbaArray(), [255, 255, 255, 1]);
 assert.deepEqual(color("rgb(100%, 100%, 100%)").toRgbaArray(), [255, 255, 255, 1]);
+assert.deepEqual(color("rgba(100%, 100%, 100%, .5)").toHexString(), '#ffffff7f');
 assert.deepEqual(color("rgba(255, 255, 255, .5)").toRgbaArray(), [255, 255, 255, .5]);
 assert.equal(color().fromRgb([255, 255, 255]).toRgbString(), 'rgb(255, 255, 255)');
 assert.equal(color().fromRgba([255, 255, 255, 1]).toRgbString(), 'rgb(255, 255, 255)');

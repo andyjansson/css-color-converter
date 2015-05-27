@@ -57,9 +57,9 @@ var Color = function (obj) {
 				parseInt(match[3]),
 				parseFloat(match[4])
 			];
-			if (match[1].indexOf("%") > -1) rgb[0] = rgb[0]*255/100;
-			if (match[2].indexOf("%") > -1) rgb[1] = rgb[1]*255/100;
-			if (match[3].indexOf("%") > -1) rgb[2] = rgb[2]*255/100;
+			if (match[1].indexOf("%") > -1) rgba[0] = rgba[0]*255/100;
+			if (match[2].indexOf("%") > -1) rgba[1] = rgba[1]*255/100;
+			if (match[3].indexOf("%") > -1) rgba[2] = rgba[2]*255/100;
 			
 			return this.fromRgba(rgba);
 		}
