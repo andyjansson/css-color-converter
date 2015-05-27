@@ -126,10 +126,16 @@ Color.prototype = {
 	},
 	toHexString: function () {
 		var hex = "#";
-		hex += this.values[0].toString(16);
-		hex += this.values[1].toString(16);
-		hex += this.values[2].toString(16);
-		if (this.values[3] !== 1) hex += parseInt(this.values[3] * 255).toString(16);
+		var r = this.values[0].toString(16);
+		var g = this.values[1].toString(16);
+		var b = this.values[2].toString(16);
+		var a = parseInt(this.values[3] * 255).toString(16);
+		if (r.length == 1) r = "0" + r;
+		if (g.length == 1) g = "0" + g;
+		if (b.length == 1) b = "0" + b;
+		if (a.length == 1) a = "0" + a;
+		hex += r + g + b;
+		if (a !== "ff") hex += a;
 		return hex;
 	},
 	toRgbaArray: function () {

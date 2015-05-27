@@ -2,6 +2,7 @@ var color = require(".."),
 	assert = require("assert");
 
 assert.deepEqual(color("blue").toRgbaArray(), [0, 0, 255, 1]);
+assert.deepEqual(color("blue").toHexString(), '#0000ff');
 assert.deepEqual(color("rgb(255, 255, 255)").toRgbaArray(), [255, 255, 255, 1]);
 assert.deepEqual(color("rgb(100%, 100%, 100%)").toRgbaArray(), [255, 255, 255, 1]);
 assert.deepEqual(color("rgba(255, 255, 255, .5)").toRgbaArray(), [255, 255, 255, .5]);

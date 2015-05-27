@@ -1,6 +1,6 @@
 {
   "name": "css-color-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts CSS colors from one representation to another",
   "main": "index.js",
   "scripts": {
