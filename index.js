@@ -12,7 +12,7 @@ var Color = function (obj) {
 			hsl = /^hsl\(\s*([0-9]+)\s*,\s*([0-9]+)%\s*,\s*([0-9]+)%\s*\)$/,
 			hsla = /^hsla\(\s*([0-9]+)\s*,\s*([0-9]+)%\s*,\s*([0-9]+)%\s*,\s*([0-1]|0?\.[0-9]+)\s*\)$/,
 			match;
-			
+
 		if (match = colorNames[obj]) {
 			return this.fromRgb(match);
 		}
@@ -47,7 +47,7 @@ var Color = function (obj) {
 			if (match[1].indexOf("%") > -1) rgb[0] = rgb[0]*255/100;
 			if (match[2].indexOf("%") > -1) rgb[1] = rgb[1]*255/100;
 			if (match[3].indexOf("%") > -1) rgb[2] = rgb[2]*255/100;
-			
+
 			return this.fromRgb(rgb);
 		}
 		else if (match = rgba.exec(obj)) {
@@ -60,7 +60,7 @@ var Color = function (obj) {
 			if (match[1].indexOf("%") > -1) rgba[0] = rgba[0]*255/100;
 			if (match[2].indexOf("%") > -1) rgba[1] = rgba[1]*255/100;
 			if (match[3].indexOf("%") > -1) rgba[2] = rgba[2]*255/100;
-			
+
 			return this.fromRgba(rgba);
 		}
 		else if (match = hsl.exec(obj)) {
@@ -81,12 +81,12 @@ var Color = function (obj) {
 			return this.fromHsla(hsla);
 		}
 	}
-	
+
 	if (Array.isArray(obj)) {
-		
+
 		if (obj.length < 3)
 			throw new Error("Insufficient number of parameters");
-	
+
 		this.values = [
 			Math.min(parseInt(obj[0]), 255),
 			Math.min(parseInt(obj[1]), 255),
@@ -113,7 +113,7 @@ Color.prototype = {
 		vals[3] = 1;
 		return this.fromHsla(vals);
 	},
-	
+
 	toRgbString: function () {
 		var rgb = this.values;
 		if (rgb[3] === 1) return "rgb("+rgb[0]+", "+rgb[1]+", "+rgb[2]+")";
@@ -140,6 +140,11 @@ Color.prototype = {
 	},
 	toRgbaArray: function () {
 		return this.values;
+	},
+	toHslaArray: function () {
+		var hsla = converter.rgb(this.values).hsl();
+		hsla[3] = this.values[3];
+		return hsla;
 	}
 };
 
