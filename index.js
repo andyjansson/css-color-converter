@@ -91,7 +91,7 @@ var Color = function (obj) {
 			Math.min(parseInt(obj[0]), 255),
 			Math.min(parseInt(obj[1]), 255),
 			Math.min(parseInt(obj[2]), 255),
-			parseFloat(obj[3] || 1)
+			obj[3] == null ? 1 : parseFloat(obj[3])
 		];
 	}
 };

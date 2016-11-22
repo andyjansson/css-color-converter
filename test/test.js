@@ -45,3 +45,7 @@ assert.equal(color("#ffffff").toHslString(), 'hsl(0, 0%, 100%)');
 assert.equal(color("#ffffff7f").toHslString(), 'hsla(0, 0%, 100%, 0.5)');
 assert.equal(color("#ffffff").toHexString(), '#ffffff');
 assert.equal(color("#ffffff7f").toHexString(), '#ffffff7f');
+assert.deepEqual(color([0, 0, 0, 0]).toRgbaArray(), [0, 0, 0, 0]);
+assert.deepEqual(color('rgba(0, 0, 0, 0)').toRgbaArray(), [0, 0, 0, 0]);
+assert.deepEqual(color([3, 2, 1, 0]).toRgbaArray(), [3, 2, 1, 0]);
+assert.deepEqual(color('rgba(3, 2, 1, 0)').toRgbaArray(), [3, 2, 1, 0]);
