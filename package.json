@@ -1,10 +1,11 @@
 {
   "name": "css-color-converter",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Converts CSS colors from one representation to another",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "test": "node test/test.js"
+    "lint": "eslint --ext .js,.mjs .",
+    "test": "node test/test.mjs"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,12 @@
   "homepage": "https://github.com/andyjansson/css-color-converter",
   "dependencies": {
     "color-convert": "^0.5.2",
-    "color-name": "^1.0.0"
+    "color-name": "^1.1.4",
+    "css-unit-converter": "^1.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
 }

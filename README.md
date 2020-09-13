@@ -13,15 +13,25 @@ npm install css-color-converter
 
 ## Usage
 
+**Example usage**: 
 ```js
-var color = require('css-color-converter');
+import { fromString } from 'css-color-converter';
 
-color('rgb(255, 255, 255)').toHslString(); // hsl(0, 0%, 100%)
-color('rgba(255, 255, 255, 0.5)').toHslString(); // hsla(0, 0%, 100%, 0.5)
-color('blue').toRgbString(); // rgb(0, 0, 255)
-color('red').toHexString(); // #ff0000
+fromString('rgb(255, 255, 255)').toHslString(); // hsl(0, 0%, 100%)
+fromString('rgba(255, 255, 255, 0.5)').toHslString(); // hsla(0, 0%, 100%, 0.5)
+fromString('blue').toRgbString(); // rgb(0, 0, 255)
+fromString('red').toHexString(); // #ff0000
 ```
-## Methods
+## Functions
+
+### `fromString(str)`
+| parameter | type   | description                                    |
+| --------- | ------ | ---------------------------------------------- |
+| `str`     | string | Supports named colors, hex, rgb/rgba, hsl/hsla |
+
+**Returns** `instance`
+
+**Raises** `Error`
 
 ### `fromRgb([r, g, b])`
 
@@ -64,6 +74,8 @@ color('red').toHexString(); // #ff0000
 | `a`       | float  | alpha (0-1)        |
 
 **Returns** `instance`
+
+## Methods
 
 ### `toRgbString()`
 
