@@ -2,7 +2,9 @@
 
 node_modules/
 
-test/
 .travis.yml
-
+.eslintrc.js
+babel.config.json
 gulpfile.js
+src/
+lib/__tests__/
