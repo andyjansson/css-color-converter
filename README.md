@@ -29,9 +29,7 @@ fromString('red').toHexString(); // #ff0000
 | --------- | ------ | ---------------------------------------------- |
 | `str`     | string | Supports named colors, hex, rgb/rgba, hsl/hsla |
 
-**Returns** `instance`
-
-**Raises** `Error`
+**Returns** [`instance`](#Methods) if valid, `null` if invalid.
 
 ### `fromRgb([r, g, b])`
 
@@ -41,7 +39,7 @@ fromString('red').toHexString(); // #ff0000
 | `g`       | int    | green (0-255) |
 | `b`       | int    | blue (0-255)  |
 
-**Returns** `instance`
+**Returns** [`instance`](#Methods)
 
 ### `fromRgba([r, g, b, a])`
 
@@ -52,7 +50,7 @@ fromString('red').toHexString(); // #ff0000
 | `b`       | int    | blue (0-255)  |
 | `a`       | float  | alpha (0-1)   |
 
-**Returns** `instance`
+**Returns** [`instance`](#Methods)
 
 ### `fromHsl([h, s, l])`
 
@@ -62,7 +60,7 @@ fromString('red').toHexString(); // #ff0000
 | `s`       | int    | saturation (0-100) |
 | `l`       | int    | luminosity (0-100) |
 
-**Returns** `instance`
+**Returns** [`instance`](#Methods)
 
 ### `fromHsla([h, s, l, a])`
 
@@ -73,7 +71,7 @@ fromString('red').toHexString(); // #ff0000
 | `l`       | int    | luminosity (0-100) |
 | `a`       | float  | alpha (0-1)        |
 
-**Returns** `instance`
+**Returns** [`instance`](#Methods)
 
 ## Methods
 

@@ -1,4 +1,4 @@
-import { deepStrictEqual, strictEqual, throws } from 'assert';
+import { deepStrictEqual, strictEqual } from 'assert';
 import {
   fromString, fromRgb, fromRgba, fromHsl, fromHsla,
 } from '../index.mjs';
@@ -43,7 +43,6 @@ strictEqual(fromString('#ffffff').toHslString(), 'hsl(0, 0%, 100%)');
 strictEqual(fromString('#ffffff7f').toHslString(), 'hsla(0, 0%, 100%, 0.5)');
 strictEqual(fromString('#ffffff').toHexString(), '#ffffff');
 strictEqual(fromString('#ffffff7f').toHexString(), '#ffffff7f');
-throws(() => fromString('nonsense'));
 strictEqual(fromRgb([255, 255, 255]).toRgbString(), 'rgb(255, 255, 255)');
 strictEqual(fromRgba([255, 255, 255, 1]).toRgbString(), 'rgb(255, 255, 255)');
 strictEqual(fromRgba([255, 255, 255, 0.5]).toRgbString(), 'rgba(255, 255, 255, 0.5)');
@@ -60,3 +59,4 @@ strictEqual(fromHsla([0, 0, 100, 1]).toHslString(), 'hsl(0, 0%, 100%)');
 strictEqual(fromHsla([0, 0, 100, 0.5]).toHslString(), 'hsla(0, 0%, 100%, 0.5)');
 strictEqual(fromHsla([0, 0, 100, 1]).toHexString(), '#ffffff');
 strictEqual(fromHsla([0, 0, 100, 0.5]).toHexString(), '#ffffff7f');
+strictEqual(fromString('nonsense'), null);

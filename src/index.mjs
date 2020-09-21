@@ -178,7 +178,7 @@ export function fromString(str) {
     return fromHslString(str);
   }
 
-  throw Error(`Cannot parse string '${str}'`);
+  return null;
 }
 
 export default {
