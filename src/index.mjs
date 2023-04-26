@@ -7,7 +7,8 @@ const rgb = /^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*(0|1|0?\.\d+|\d+%
 const rgbfn = /^rgba?\(\s*(\d+)\s+(\d+)\s+(\d+)(?:\s*\/\s*(0|1|0?\.\d+|\d+%))?\s*\)$/;
 const rgbperc = /^rgba?\(\s*(\d+%)\s*,\s*(\d+%)\s*,\s*(\d+%)(?:\s*,\s*(0|1|0?\.\d+|\d+%))?\s*\)$/;
 const rgbpercfn = /^rgba?\(\s*(\d+%)\s+(\d+%)\s+(\d+%)(?:\s*\/\s*(0|1|0?\.\d+|\d+%))?\s*\)$/;
-const hsl = /^hsla?\(\s*(\d+)(deg|rad|grad|turn)?\s*,\s*(\d+)%\s*,\s*(\d+)%(?:\s*,\s*(0|1|0?\.\d+|\d+%))?\s*\)$/;
+const hsl = /^hsla?\(\s*(0?\.\d+|\d+)(deg|rad|grad|turn)?\s*,\s*(\d+)%\s*,\s*(\d+)%(?:\s*,\s*(0?\.\d+|\d+%))?\s*\)$/;
+const hslws = /^hsla?\(\s*(0?\.\d+|\d+)(deg|rad|grad|turn)?\s+(\d+)%\s+(\d+)%(?:\s*\/\s*(0?\.\d+|\d+%))?\s*\)$/;
 
 function contains(haystack, needle) {
   return haystack.indexOf(needle) > -1;
@@ -151,8 +152,8 @@ function fromRgbString(str) {
   return fromRgba([r, g, b, a]);
 }
 
-function fromHslString(str) {
-  let [, h, unit, s, l, a] = hsl.exec(str);
+function fromHslString(reg, str) {
+  let [, h, unit, s, l, a] = reg.exec(str);
   unit = unit || 'deg';
   h = unitConverter(parseFloat(h), unit, 'deg');
   s = parseFloat(s);
@@ -175,7 +176,11 @@ export function fromString(str) {
   }
 
   if (hsl.test(str)) {
-    return fromHslString(str);
+    return fromHslString(hsl, str);
+  }
+
+  if (hslws.test(str)) {
+    return fromHslString(hslws, str);
   }
 
   return null;

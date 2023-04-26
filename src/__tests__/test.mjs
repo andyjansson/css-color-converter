@@ -21,9 +21,13 @@ deepStrictEqual(fromString('rgba(255 255 255 / .5)').toHslaArray(), [0, 0, 100, 
 deepStrictEqual(fromString('rgba(0, 0, 0, 0)').toRgbaArray(), [0, 0, 0, 0]);
 deepStrictEqual(fromString('rgba(3, 2, 1, 0)').toRgbaArray(), [3, 2, 1, 0]);
 deepStrictEqual(fromString('hsl(0, 0%, 100%)').toHslaArray(), [0, 0, 100, 1]);
+deepStrictEqual(fromString('hsl(0 0% 100%)').toHslaArray(), [0, 0, 100, 1]);
 deepStrictEqual(fromString('hsl(0, 0%, 100%)').toRgbaArray(), [255, 255, 255, 1]);
+deepStrictEqual(fromString('hsl(0 0% 100%)').toRgbaArray(), [255, 255, 255, 1]);
 deepStrictEqual(fromString('hsla(0, 0%, 100%, .5)').toHslaArray(), [0, 0, 100, 0.5]);
+deepStrictEqual(fromString('hsla(0 0% 100% / .5)').toHslaArray(), [0, 0, 100, 0.5]);
 deepStrictEqual(fromString('hsla(0, 0%, 100%, .5)').toRgbaArray(), [255, 255, 255, 0.5]);
+deepStrictEqual(fromString('hsla(0 0% 100% / .5)').toRgbaArray(), [255, 255, 255, 0.5]);
 deepStrictEqual(fromString('#ffffff').toRgbaArray(), [255, 255, 255, 1]);
 deepStrictEqual(fromString('#ffffff').toHslaArray(), [0, 0, 100, 1]);
 deepStrictEqual(fromString('#ffffffff').toRgbaArray(), [255, 255, 255, 1]);
